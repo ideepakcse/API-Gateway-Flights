@@ -29,7 +29,6 @@ async function signIn(email, plainPassword) {
     try {
         // step 1-> fetch the user using the email
         const user = await userRepository.getUserByEmail(email);
-        console.log(user);
         // step 2-> compare incoming plain password with stores encrypted password
         const passwordsMatch = checkPassword(plainPassword, user.password);
         if(!passwordsMatch) {
